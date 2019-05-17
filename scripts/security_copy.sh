@@ -9,4 +9,5 @@ then
 	rm -Rf Documents.tar.gaz
 fi
 #Ahora hacemos la nueva copia de seguridad
-tar -zcvf /var/backups/Documents.tar.gz $HOME
+tar -zcvf /var/backups/Documents.tar.gz /home/odroid/
+exit 0
