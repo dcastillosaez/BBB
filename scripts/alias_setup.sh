@@ -3,9 +3,9 @@
 
 alias bbb_set_permisions='sudo chown -Rf debian $HOME/BBB/* && sudo chgrp -Rfv debian $HOME/BBB/*'
 
-alias bbb_kill_applications ='$SCRIPTS/application_terminate.sh'
+#alias bbb_kill_applications ='$SCRIPTS/application_terminate.sh'
 
-alias actualizar_repositorio ='cd $REPO && git pull'
+alias actualizar_repositorio ='cd $REPO && sudo git pull'
 
 alias actualizar='sudo apt-get update -y && sudo apt-get upgrade -y'
 
