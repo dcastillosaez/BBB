@@ -1,7 +1,7 @@
 #!/bin/bash
 #Configuracion de comandos rapidos
 
-alias bbb_set_permisions='sudo chown -Rf odroid /home/odroid/BBB/* && sudo chgrp -Rfv odroid /home/odroid/BBB/*'
+alias bbb_set_permisions='sudo chown -Rf odroid /home/odroid/BBB/* && sudo chgrp -Rfv odroid /home/odroid/BBB/scripts/*'
 
 #alias bbb_kill_applications ='$SCRIPTS/application_terminate.sh'
 
