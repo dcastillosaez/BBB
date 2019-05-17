@@ -1,7 +1,7 @@
 #!/bin/bash
 #Configuracion de comandos rapidos
 
-alias bbb_set_permisions=`sudo chown -Rf debian $HOME/BBB/* && sudo chgrp -Rfv debian $HOME/BBB/*`
+alias bbb_set_permisions='sudo chown -Rf debian /home/odroid/BBB/* && sudo chgrp -Rfv debian /home/odroid/BBB/*'
 
 #alias bbb_kill_applications ='$SCRIPTS/application_terminate.sh'
 
