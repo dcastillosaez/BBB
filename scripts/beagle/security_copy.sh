@@ -8,4 +8,4 @@ then
 	rm -Rf Documents.tar.gaz
 fi
 #Ahora hacemos la nueva copia de seguridad
-tar -zcvf /var/backups/Documents.tar.gz /home/debian/
+zip /var/backups/Documents.zip /home/debian/
