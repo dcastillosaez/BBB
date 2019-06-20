@@ -12,9 +12,13 @@
 //Espacios de nombres utilizados
 using namespace BBB;
 using namespace std;
-int main()
+int main(int argc, char* argv[])
 {
     //Cargamos la configuracion del PWM en concreto
+    int time=(int)argv[2];
+    int step=(int)argv[1];
+    printf("Paso escogido\n: %d", step);
+    printf("Tiempo de delay escogido\n: %d", time);
 
     PWM pwm(PWM::P9_22);
     pwm.setDutyCycle((unsigned)510000);
@@ -25,10 +29,11 @@ int main()
     printf("Inicio de bucle\n");
     int min_val=500000;
     int max_val=2000000;
-    for (int i=min_val; i<max_val; i+=25000) {
+    for (int i=min_val; i<max_val; i+=step) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
-        usleep(5*1000*100);
+//        usleep(5*1000*100);
+        usleep(time);
         printf("Iteracion %d\n",i);
         pwm.run();
     }
