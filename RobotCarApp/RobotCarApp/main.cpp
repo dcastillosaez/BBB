@@ -37,7 +37,13 @@ int main(int argc, char* argv[])
     for (int i=min_val; i<max_val; i+=step) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
-//        usleep(5*1000*100);
+        usleep(time);
+        printf("Iteracion %d\n",i);
+        pwm.run();
+    }
+    for (int i=max_val; i>=min_val; i-=step) {
+        unsigned int duration=i;
+        pwm.setDutyCycle(duration);
         usleep(time);
         printf("Iteracion %d\n",i);
         pwm.run();
