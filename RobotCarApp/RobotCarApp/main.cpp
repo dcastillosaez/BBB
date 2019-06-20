@@ -22,13 +22,14 @@ int main()
     pwm.setPeriod(20000000);  //50kHz (20ms)
     pwm.setDutyCycle((unsigned)0);
     pwm.run();
-
+    printf("Inicio de bucle\n");
     int min_val=500000;
     int max_val=2000000;
     for (int i=min_val; i<max_val; i++) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
         usleep(100000);
+        printf("Iteracion %d\n",i);
         pwm.run();
     }
     pwm.stop();
