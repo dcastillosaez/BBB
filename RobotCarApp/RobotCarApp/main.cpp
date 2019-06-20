@@ -8,15 +8,20 @@
 #include "util.h"
 #include "PWMuniv.h"
 #include <unistd.h>
+#include <stdlib.h>  // for strtol
 
 //Espacios de nombres utilizados
 using namespace BBB;
 using namespace std;
 int main(int argc, char* argv[])
 {
+    char *p;
+    long step_conv = strtol(argv[1], &p, 10);
+    long time_conv = strtol(argv[2], &p, 10);
+
     //Cargamos la configuracion del PWM en concreto
-    int time=(int)argv[2];
-    int step=(int)argv[1];
+    int step=step_conv;
+    int time=time_conv;
     printf("Paso escogido\n: %d", step);
     printf("Tiempo de delay escogido\n: %d", time);
 
