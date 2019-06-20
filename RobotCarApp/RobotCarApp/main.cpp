@@ -28,7 +28,7 @@ int main()
     for (int i=min_val; i<max_val; i++) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
-        usleep(100000);
+        usleep(20000);
         printf("Iteracion %d\n",i);
         pwm.run();
     }
