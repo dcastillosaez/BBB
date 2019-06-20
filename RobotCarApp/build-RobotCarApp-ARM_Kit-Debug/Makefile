@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../RobotCarApp -I. -isystem /usr/include/i386-linux-gnu/qt5 -isystem /usr/include/i386-linux-gnu/qt5/QtCore -I. -I/usr/lib/i386-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../RobotCarApp -I. -I../../include -isystem /usr/include/i386-linux-gnu/qt5 -isystem /usr/include/i386-linux-gnu/qt5/QtCore -I. -I/usr/lib/i386-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/i386-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -314,7 +314,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../RobotCarApp/main.cpp 
+main.o: ../RobotCarApp/main.cpp /home/david/BBB/include/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../RobotCarApp/main.cpp
 
 GPIOUniv.o: ../../include/GPIOUniv.cpp ../../include/GPIOUniv.h \

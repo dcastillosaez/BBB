@@ -38,8 +38,8 @@ GPIO::GPIO(pinGPIO pinName_p) {
 	this->threadRunning = false;
 	this->lastEventTime = getCurrentMicroseconds();;
 
-    number = pinGPIONumber.at(pinName_p);   //Dado el numero del pin, selecciona numero del GPIO
-    pinName = pinGPIOName.at(pinName_p);    //Dado el numero del pin, selecciona el nombre del PIN
+	number = pinGPIONumber.at(pinName_p);
+	pinName = pinGPIOName.at(pinName_p);
 	cout << "Configurando pin "<< pinName <<" ("<< number << ") ..."<< endl;
 
 	ostringstream s;

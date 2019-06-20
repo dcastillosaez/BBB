@@ -1,0 +1,7 @@
+#Archivos ignorados en el proyecto
+*.pro.user
+#Ignoramos los binarios generados
+*.o
+#Ignoramos la carpeta build
+
+*build*

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.5.1, 2019-06-02T14:10:41. -->
+<!-- Written by QtCreator 3.5.1, 2019-06-19T22:13:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -259,7 +259,7 @@
  <data>
   <variable>ProjectExplorer.Project.Target.1</variable>
   <valuemap type="QVariantMap">
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">ARM_Kit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">BeagleBone Black</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">BeagleBone Black</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{3e7b20f0-2668-4001-babb-16f45b4d591b}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>

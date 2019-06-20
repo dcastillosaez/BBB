@@ -5,7 +5,7 @@ alias bbb_set_permisions='sudo chown -Rf odroid /home/odroid/BBB/* && sudo chgrp
 
 #alias bbb_kill_applications='/home/odroid/BBB/application_terminate.sh'
 
-alias update_repo='cd /home/odroid/BBB && git pull'
+alias update_repo='cd "$HOME"/BBB && git pull'
 
 alias actualizar='sudo apt-get update -y && sudo apt-get upgrade -y'
 

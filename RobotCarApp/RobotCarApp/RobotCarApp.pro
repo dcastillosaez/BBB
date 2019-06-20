@@ -7,6 +7,8 @@ CONFIG -= app_bundle
 CONFIG +=c++11
 TEMPLATE = app
 
+INCLUDEPATH+= \
+        ../../include
 SOURCES += main.cpp \
     ../../include/GPIOUniv.cpp \
     ../../include/PWMuniv.cpp \

@@ -19,95 +19,78 @@ typedef int (*CallbackType)(int);
  */
 class GPIO {
 public:
-    enum DIRECTION
-    {
-        INPUT,
-        OUTPUT
-    };
-
-    enum VALUE
-    {
-        LOW=0,
-        HIGH=1
-    };
-    enum EDGE
-    {
-        NONE,
-        RISING,
-        FALLING,
-        BOTH
-    };
-    enum pinGPIO
-    {
-        P8_3,	//GPIO_38
-        P8_4,	//GPIO_39
-        P8_5,	//GPIO_34
-        P8_6,	//GPIO_35
-        P8_7,	//GPIO_66
-        P8_8,	//GPIO_67
-        P8_9,	//GPIO_69
-        P8_10,	//GPIO_68
-        P8_11,	//GPIO_45
-        P8_12,	//GPIO_44
-        P8_13,	//GPIO_23
-        P8_14,	//GPIO_26
-        P8_15,	//GPIO_47
-        P8_16,	//GPIO_46
-        P8_17,	//GPIO_27
-        P8_18,	//GPIO_65
-        P8_19,	//GPIO_22
-        P8_20,	//GPIO_63
-        P8_21,	//GPIO_62
-        P8_22,	//GPIO_37
-        P8_23,	//GPIO_36
-        P8_24,	//GPIO_33
-        P8_25,	//GPIO_32
-        P8_26,	//GPIO_61
-        P8_27,	//GPIO_86
-        P8_28,	//GPIO_88
-        P8_29,	//GPIO_87
-        P8_30,	//GPIO_80
-        P8_31,	//GPIO_10
-        P8_32,	//GPIO_11
-        P8_33,	//GPIO_9
-        P8_34,	//GPIO_81
-        P8_35,	//GPIO_8
-        P8_36,	//GPIO_80
-        P8_37,	//GPIO_78
-        P8_38,	//GPIO_79
-        P8_39,	//GPIO_76
-        P8_40,	//GPIO_77
-        P8_41,	//GPIO_74
-        P8_42,	//GPIO_75
-        P8_43,	//GPIO_72
-        P8_44,	//GPIO_73
-        P8_45,	//GPIO_70
-        P8_46,	//GPIO_71
-        P9_11,	//GPIO_30
-        P9_12,	//GPIO_60
-        P9_13,	//GPIO_31
-        P9_14,	//GPIO_50
-        P9_15,	//GPIO_48
-        P9_16,	//GPIO_51
-        P9_17,	//GPIO_5
-        P9_18,	//GPIO_4
-        P9_21,	//GPIO_3
-        P9_22,	//GPIO_2
-        P9_23,	//GPIO_49
-        P9_24,	//GPIO_15
-        P9_25,	//GPIO_117
-        P9_26,	//GPIO_14
-        P9_27,	//GPIO_115
-        P9_28,	//GPIO_113
-        P9_29,	//GPIO_111
-        P9_30,	//GPIO_112
-        P9_31,	//GPIO_110
-        P9_41,	//GPIO_20
-        P9_42	//GPIO_7
+	enum DIRECTION{ INPUT, OUTPUT };
+	enum VALUE{ LOW=0, HIGH=1 };
+	enum EDGE{ NONE, RISING, FALLING, BOTH };
+	enum pinGPIO {	P8_3,	//GPIO_38
+					P8_4,	//GPIO_39
+					P8_5,	//GPIO_34
+					P8_6,	//GPIO_35
+					P8_7,	//GPIO_66
+					P8_8,	//GPIO_67
+					P8_9,	//GPIO_69
+					P8_10,	//GPIO_68
+					P8_11,	//GPIO_45
+					P8_12,	//GPIO_44
+					P8_13,	//GPIO_23
+					P8_14,	//GPIO_26
+					P8_15,	//GPIO_47
+					P8_16,	//GPIO_46
+					P8_17,	//GPIO_27
+					P8_18,	//GPIO_65
+					P8_19,	//GPIO_22
+					P8_20,	//GPIO_63
+					P8_21,	//GPIO_62
+					P8_22,	//GPIO_37
+					P8_23,	//GPIO_36
+					P8_24,	//GPIO_33
+					P8_25,	//GPIO_32
+					P8_26,	//GPIO_61
+					P8_27,	//GPIO_86
+					P8_28,	//GPIO_88
+					P8_29,	//GPIO_87
+					P8_30,	//GPIO_80
+					P8_31,	//GPIO_10
+					P8_32,	//GPIO_11
+					P8_33,	//GPIO_9
+					P8_34,	//GPIO_81
+					P8_35,	//GPIO_8
+					P8_36,	//GPIO_80
+					P8_37,	//GPIO_78
+					P8_38,	//GPIO_79
+					P8_39,	//GPIO_76
+					P8_40,	//GPIO_77
+					P8_41,	//GPIO_74
+					P8_42,	//GPIO_75
+					P8_43,	//GPIO_72
+					P8_44,	//GPIO_73
+					P8_45,	//GPIO_70
+					P8_46,	//GPIO_71
+					P9_11,	//GPIO_30
+					P9_12,	//GPIO_60
+					P9_13,	//GPIO_31
+					P9_14,	//GPIO_50
+					P9_15,	//GPIO_48
+					P9_16,	//GPIO_51
+					P9_17,	//GPIO_5
+					P9_18,	//GPIO_4
+					P9_21,	//GPIO_3
+					P9_22,	//GPIO_2
+					P9_23,	//GPIO_49
+					P9_24,	//GPIO_15
+					P9_25,	//GPIO_117
+					P9_26,	//GPIO_14
+					P9_27,	//GPIO_115
+					P9_28,	//GPIO_113
+					P9_29,	//GPIO_111
+					P9_30,	//GPIO_112
+					P9_31,	//GPIO_110
+					P9_41,	//GPIO_20
+					P9_42	//GPIO_7
 		};
 
 	const std::map<pinGPIO,string> pinGPIOName = {
-                    //Pin    Name
+				   //Pin	Name
 					{P8_3,	"P8.3"},
 					{P8_4,	"P8.4"},
 					{P8_5,	"P8.5"},
@@ -245,14 +228,16 @@ public:
 	};
 
 private:
-    int number;			// The GPIO number of the object
-    int debounceTime;   //  The debounce time in milliseconds
-    string name;		//  The name of the GPIO e.g. gpio50
-    string pinName;     //  The name of Pin e.g. P9_14
-    string path;  		//  The full path to the GPIO e.g. /sys/class/gpio/gpio50/
-
+	int number;			/**< The GPIO number of the object */
+	int debounceTime;   /**< The debounce time in milliseconds */
+	string name;		/**< The name of the GPIO e.g. gpio50 */
+	string pinName;
+	string path;  		/**< The full path to the GPIO e.g. /sys/class/gpio/gpio50/ */
+	//string chipPath;
+	//string system_export_param = "";
 
 public:
+	//GPIO(int number);
 	GPIO(pinGPIO pinName_p);
 	virtual int getNumber() { return number; } /**< Returns the GPIO number as an int. */
 
