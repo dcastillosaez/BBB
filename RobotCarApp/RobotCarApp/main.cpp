@@ -25,7 +25,7 @@ int main()
     printf("Inicio de bucle\n");
     int min_val=500000;
     int max_val=2000000;
-    for (int i=min_val; i<max_val; i+=10000) {
+    for (int i=min_val; i<max_val; i+=25000) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
         usleep(5*1000*100);
