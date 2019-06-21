@@ -2,10 +2,10 @@
 PRB=$HOME/BBB
 export PRB
 
-REPO=/home/debian/BBB
+REPO=$HOME/BBB
 export REPO
 
-SCRIPTS=/home/debian/BBB/scripts
+SCRIPTS=$HOME/BBB/scripts
 export SCRIPTS
 
 GPIOS=/sys/class/gpio
