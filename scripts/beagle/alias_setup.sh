@@ -5,7 +5,7 @@ alias bbb_set_permisions='sudo chown -Rf debian /home/debian/BBB/* && sudo chgrp
 
 #alias bbb_kill_applications='/home/debian/BBB/application_terminate.sh'
 
-alias update_repo='cd /home/debian/BBB && git pull'
+alias update_repo='cd $HOME/BBB && git pull'
 
 alias actualizar='sudo apt-get update -y && sudo apt-get upgrade -y'
 
