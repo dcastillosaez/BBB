@@ -1,4 +1,7 @@
 #!/bin/bash
+PRB=$HOME/BBB
+export PRB
+
 REPO=/home/debian/BBB
 export REPO
 
