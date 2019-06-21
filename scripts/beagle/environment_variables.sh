@@ -11,3 +11,11 @@ export SCRIPTS
 GPIOS=/sys/class/gpio
 export GPIOS
 
+INCLUDE=$REPO/include
+export INCLUDE
+
+TEST=$REPO/test
+export TEST
+
+PWM=/sys/class/pwm
+export PWM
