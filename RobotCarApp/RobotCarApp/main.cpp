@@ -8,7 +8,7 @@
 #include "util.h"
 #include "PWMuniv.h"
 #include <unistd.h>
-#include <stdlib.h>  // for strtol
+#include <stdlib.h>  // Para transformar el argv en un entero
 
 //Espacios de nombres utilizados
 using namespace BBB;
