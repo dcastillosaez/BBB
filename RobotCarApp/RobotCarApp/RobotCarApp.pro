@@ -31,10 +31,13 @@ INCLUDEPATH+= \
 SOURCES += main.cpp \
     ../../include/GPIOUniv.cpp \
     ../../include/PWMuniv.cpp \
-    ../../include/util.cpp
+    ../../include/util.cpp \
+    ServoManager.cpp
 
 HEADERS += \
     ../../include/GPIOUniv.h \
     ../../include/PWMuniv.h \
-    ../../include/util.h
+    ../../include/util.h \
+    ../../include/Structs.h \
+    ServoManager.h
 
