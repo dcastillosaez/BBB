@@ -61,7 +61,7 @@ void ServoManager::initMovement(long step_conv, long velocity_conv)
         printf("Iteracion %d\n",i);
         pwm.run();
     }
-    for (int i=max_val; i>=min_val; i-=step) {
+    for (int i=max_val; i>=min_val; i-=servo_step) {
         unsigned int duration=i;
         pwm.setDutyCycle(duration);
         usleep(servo_velocity);
