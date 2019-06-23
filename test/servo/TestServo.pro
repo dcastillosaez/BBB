@@ -1,7 +1,7 @@
 QT += core
 QT -= gui
 
-TARGET = RobotCarApp
+TARGET = test_servo
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG +=c++11
