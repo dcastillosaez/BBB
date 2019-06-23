@@ -48,11 +48,13 @@ OBJECTS_DIR   = ../../build/release/.obj/
 SOURCES       = main.cpp \
 		../../include/GPIOUniv.cpp \
 		../../include/PWMuniv.cpp \
-		../../include/util.cpp 
+		../../include/util.cpp \
+		ServoManager.cpp 
 OBJECTS       = ../../build/release/.obj/main.o \
 		../../build/release/.obj/GPIOUniv.o \
 		../../build/release/.obj/PWMuniv.o \
-		../../build/release/.obj/util.o
+		../../build/release/.obj/util.o \
+		../../build/release/.obj/ServoManager.o
 DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/unix.conf \
@@ -109,7 +111,8 @@ DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		RobotCarApp.pro main.cpp \
 		../../include/GPIOUniv.cpp \
 		../../include/PWMuniv.cpp \
-		../../include/util.cpp
+		../../include/util.cpp \
+		ServoManager.cpp
 QMAKE_TARGET  = RobotCarApp
 DESTDIR       = ../../build/release/#avoid trailing-slash linebreak
 TARGET        = ../../build/release/RobotCarApp
@@ -261,7 +264,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d ../../build/release/.obj/RobotCarApp1.0.0 || mkdir -p ../../build/release/.obj/RobotCarApp1.0.0
-	$(COPY_FILE) --parents $(DIST) ../../build/release/.obj/RobotCarApp1.0.0/ && $(COPY_FILE) --parents ../../include/GPIOUniv.h ../../include/PWMuniv.h ../../include/util.h ../../build/release/.obj/RobotCarApp1.0.0/ && $(COPY_FILE) --parents main.cpp ../../include/GPIOUniv.cpp ../../include/PWMuniv.cpp ../../include/util.cpp ../../build/release/.obj/RobotCarApp1.0.0/ && (cd `dirname ../../build/release/.obj/RobotCarApp1.0.0` && $(TAR) RobotCarApp1.0.0.tar RobotCarApp1.0.0 && $(COMPRESS) RobotCarApp1.0.0.tar) && $(MOVE) `dirname ../../build/release/.obj/RobotCarApp1.0.0`/RobotCarApp1.0.0.tar.gz . && $(DEL_FILE) -r ../../build/release/.obj/RobotCarApp1.0.0
+	$(COPY_FILE) --parents $(DIST) ../../build/release/.obj/RobotCarApp1.0.0/ && $(COPY_FILE) --parents ../../include/GPIOUniv.h ../../include/PWMuniv.h ../../include/util.h ../../include/Structs.h ServoManager.h ../../build/release/.obj/RobotCarApp1.0.0/ && $(COPY_FILE) --parents main.cpp ../../include/GPIOUniv.cpp ../../include/PWMuniv.cpp ../../include/util.cpp ServoManager.cpp ../../build/release/.obj/RobotCarApp1.0.0/ && (cd `dirname ../../build/release/.obj/RobotCarApp1.0.0` && $(TAR) RobotCarApp1.0.0.tar RobotCarApp1.0.0 && $(COMPRESS) RobotCarApp1.0.0.tar) && $(MOVE) `dirname ../../build/release/.obj/RobotCarApp1.0.0`/RobotCarApp1.0.0.tar.gz . && $(DEL_FILE) -r ../../build/release/.obj/RobotCarApp1.0.0
 
 
 clean:compiler_clean 
@@ -298,7 +301,9 @@ compiler_clean:
 
 ####### Compile
 
-../../build/release/.obj/main.o: main.cpp ../../include/util.h \
+../../build/release/.obj/main.o: main.cpp ServoManager.h \
+		../../include/Structs.h \
+		../../include/util.h \
 		../../include/PWMuniv.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../build/release/.obj/main.o main.cpp
 
@@ -312,6 +317,12 @@ compiler_clean:
 
 ../../build/release/.obj/util.o: ../../include/util.cpp ../../include/util.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../build/release/.obj/util.o ../../include/util.cpp
+
+../../build/release/.obj/ServoManager.o: ServoManager.cpp ServoManager.h \
+		../../include/Structs.h \
+		../../include/util.h \
+		../../include/PWMuniv.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../build/release/.obj/ServoManager.o ServoManager.cpp
 
 ####### Install
 
