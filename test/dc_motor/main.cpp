@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include "DcMotorManager.h"
-int main(int argc, char *argv[])
+int main()
 {
     DcMotorManager dc_manager;
     dc_manager.move_front();

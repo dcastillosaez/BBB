@@ -40,7 +40,7 @@ public:
 private:
 
     GPIO gpio_front;
-    GPIO gpio_back(GPIO::P8_8);
+    GPIO gpio_back;
     PWM pwm;
 
 };
