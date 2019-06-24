@@ -2,6 +2,9 @@
 
 DcMotorManager::DcMotorManager()
 {
+    gpio_front(GPIO::P8_7);
+    gpio_back(GPIO::P8_8);
+    pwm(PWM::P9_22);
     gpio_front.setDirection(GPIO::OUTPUT);
     gpio_back.setDirection(GPIO::OUTPUT);
     pwm.setPolarity(PWM::ACTIVE_HIGH);

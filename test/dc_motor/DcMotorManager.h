@@ -39,9 +39,9 @@ public:
 
 private:
 
-    GPIO gpio_front(GPIO::P8_7);
+    GPIO gpio_front;
     GPIO gpio_back(GPIO::P8_8);
-    PWM pwm(PWM::P9_22);
+    PWM pwm;
 
 };
 
