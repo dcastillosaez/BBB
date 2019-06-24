@@ -37,11 +37,12 @@ public:
     //!<@brief Establee la velocidad del motor de DC
     void set_velocity(DCMOTOR_VELOCITY);
 
+    void stop_pwm();
 private:
 
-    GPIO gpio_front;
-    GPIO gpio_back;
-    PWM pwm;
+    GPIO* gpio_front;
+    GPIO* gpio_back;
+    PWM* pwm;
 
 };
 
