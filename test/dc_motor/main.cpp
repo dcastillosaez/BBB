@@ -13,10 +13,13 @@ int main()
         printf("OPCION [2] : MOVER_HACIA_DETRAS\n");
         printf("OPCION [3] : MOVER_HACIA_DERECHA\n");
         printf("OPCION [4] : MOVER_HACIA_IZQUIERDA\n");
-        scanf("%d",opcion);
+       
+
+        scanf("%d",&opcion);
         switch(opcion)
         {
         case 1:
+            printf("Movimiento hacia delante \n");
             dc_manager.move_forward();
             break;
         case 2:
@@ -34,12 +37,13 @@ int main()
         dc_manager.stop_motor_left();
         dc_manager.stop_motor_right();
         printf("¿Desea continuar con el programa? (S/N)\n");
-        scanf("%c",if_continue);
+        scanf("%c",&if_continue);
         if(if_continue=='N' || if_continue=='n')
         {
             printf("PROGRAMA FINALIZADO\n");
             exit(0);
         }
+
 
     }
 

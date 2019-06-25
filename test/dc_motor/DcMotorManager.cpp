@@ -2,8 +2,9 @@
 
 DcMotorManager::DcMotorManager()
 {
+    printf("Iniciando constructor \n");
     gpio_forward_right = new GPIO(GPIO::P8_7); //gpio66
-    gpio_foward_left   = new GPIO(GPIO::P8_8); //gpio67
+    gpio_forward_left   = new GPIO(GPIO::P8_8); //gpio67
     gpio_back_right    = new GPIO(GPIO::P8_9); //gpio69
     gpio_back_left     = new GPIO(GPIO::P8_10);//gpio68
 
@@ -78,14 +79,14 @@ void DcMotorManager::set_velocity(int motor_id, DCMOTOR_VELOCITY)
     if(motor_id==1) //Parte izquierda
     {
         //Le da un valor al PWM P9_22 que equivale a la velocidad
-        pwm_left_motors.setDutyCycle((unsigned)DCMOTOR_VELOCITY);
-        pwm_left_motors.run();
+        pwm_left_motors->setDutyCycle((unsigned)1000000);
+        pwm_left_motors->run();
     }
     else
     {
         //Le da un valor al PWM P9_14 que equivale a la velocidad
-        pwm_right_motors.setDutyCycle((unsigned)DCMOTOR_VELOCITY);
-        pwm_right_motors.run();
+        pwm_right_motors->setDutyCycle((unsigned)1000000);
+        pwm_right_motors->run();
     }
 
 }
