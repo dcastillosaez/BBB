@@ -1,7 +1,7 @@
 QT += core
 QT -= gui
 
-TARGET = test_servo
+TARGET = test_servo1
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG +=c++11
